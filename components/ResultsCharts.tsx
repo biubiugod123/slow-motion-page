@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
   ReferenceLine
 } from 'recharts';
-import { CHART_DATA } from '../constants';
+import { CHART_DATA } from '../constants.ts';
 
 const ResultsCharts: React.FC = () => {
   return (

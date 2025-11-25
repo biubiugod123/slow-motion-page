@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, Bot, User, Loader2, Sparkles } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
-import { PAPER_CONTENT } from '../constants';
+import { PAPER_CONTENT } from '../constants.ts';
 
 const AskThePaper: React.FC = () => {
   const [question, setQuestion] = useState('');

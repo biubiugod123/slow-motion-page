@@ -1,9 +1,8 @@
-
 import React from 'react';
-import Hero from './components/Hero';
-import Methodology from './components/Methodology';
-import ResultsCharts from './components/ResultsCharts';
-import ComparisonSlider from './components/ComparisonSlider';
+import Hero from './components/Hero.tsx';
+import Methodology from './components/Methodology.tsx';
+import ResultsCharts from './components/ResultsCharts.tsx';
+import ComparisonSlider from './components/ComparisonSlider.tsx';
 import { FileText, Cpu, BarChart2 } from 'lucide-react';
 
 const App: React.FC = () => {

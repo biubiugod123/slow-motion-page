@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { PlayCircle, ArrowDown, ExternalLink } from 'lucide-react';
-import { PAPER_TITLE, AUTHOR, AFFILIATION } from '../constants';
+import { PAPER_TITLE, AUTHOR, AFFILIATION } from '../constants.ts';
 
 const Hero: React.FC = () => {
   return (
