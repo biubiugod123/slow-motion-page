@@ -1,0 +1,5 @@
+{
+  "name": "HoopsFlow - Basketball Video Synthesis",
+  "description": "An interactive narrative visualization of the research paper 'Slow-Motion Video Synthesis for Basketball Using Frame Interpolation'.",
+  "requestFramePermissions": []
+}
