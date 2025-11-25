@@ -1,10 +1,8 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { MoveHorizontal, AlertCircle, Columns, Layers, ImageOff } from 'lucide-react';
-
-// Use relative paths for assets to support subdirectory deployment (e.g. GitHub Pages)
-const originRife = './originrife.png';
-const tuneRife = './tunerife.png';
+import originRifeImg from '../src/assets/originrife.png';
+import tuneRifeImg from '../src/assets/tunerife.png';
 
 interface ComparisonSliderProps {
   beforeLabel?: string;
@@ -60,15 +58,15 @@ const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
   };
 
   const renderImage = (src: string, alt: string, id: string, className: string = "") => {
-    if (imageErrors[id]) {
-      return (
-        <div className={`w-full h-full flex flex-col items-center justify-center bg-gray-800 text-gray-500 border border-gray-700 ${className}`}>
-          <ImageOff size={48} className="mb-2 opacity-50" />
-          <p className="text-xs font-mono">{src}</p>
-          <p className="text-sm font-semibold">Image not found</p>
-        </div>
-      );
-    }
+    // if (imageErrors[id]) {
+    //   return (
+    //     <div className={`w-full h-full flex flex-col items-center justify-center bg-gray-800 text-gray-500 border border-gray-700 ${className}`}>
+    //       <ImageOff size={48} className="mb-2 opacity-50" />
+    //       <p className="text-xs font-mono">{src}</p>
+    //       <p className="text-sm font-semibold">Image not found</p>
+    //     </div>
+    //   );
+    // }
     return (
       <img 
         src={src} 
@@ -117,7 +115,7 @@ const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
         >
             {/* After Image (Fine-tuned) - Underneath */}
             <div className="absolute inset-0 w-full h-full">
-                {renderImage(tuneRife, "Fine-tuned RIFE Result", 'tunerife', "w-full h-full object-contain")}
+                {renderImage(tuneRifeImg, "Fine-tuned RIFE Result", 'tunerife', "w-full h-full object-contain")}
                 <div className="absolute top-4 right-4 bg-green-500/90 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-md shadow-lg pointer-events-none z-10">
                     {afterLabel}
                 </div>
@@ -129,7 +127,7 @@ const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
             style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
             >
                 <div className="absolute inset-0 w-full h-full bg-gray-900">
-                   {renderImage(originRife, "Baseline RIFE Result", 'originrife', "w-full h-full object-contain")}
+                   {renderImage(originRifeImg, "Baseline RIFE Result", 'originrife', "w-full h-full object-contain")}
                 </div>
                 <div className="absolute top-4 left-4 bg-red-500/90 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-md shadow-lg pointer-events-none z-10">
                     {beforeLabel}
@@ -149,13 +147,13 @@ const ComparisonSlider: React.FC<ComparisonSliderProps> = ({
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0.5 bg-gray-800 border-b border-gray-800">
             <div className="relative aspect-video bg-gray-900">
-                {renderImage(originRife, "Baseline RIFE Result", 'originrife_side', "w-full h-full object-contain")}
+                {renderImage(originRifeImg, "Baseline RIFE Result", 'originrife_side', "w-full h-full object-contain")}
                 <div className="absolute top-4 left-4 bg-red-500/90 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-md shadow-lg">
                     {beforeLabel}
                 </div>
             </div>
             <div className="relative aspect-video bg-gray-900">
-                {renderImage(tuneRife, "Fine-tuned RIFE Result", 'tunerife_side', "w-full h-full object-contain")}
+                {renderImage(tuneRifeImg, "Fine-tuned RIFE Result", 'tunerife_side', "w-full h-full object-contain")}
                  <div className="absolute top-4 right-4 bg-green-500/90 text-white text-xs font-bold px-3 py-1 rounded backdrop-blur-md shadow-lg">
                     {afterLabel}
                 </div>
